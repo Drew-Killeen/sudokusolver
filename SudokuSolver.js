@@ -11,3 +11,42 @@ var board = [
 ];
 
 const GRID_SIZE = 9;
+
+function isNumInRow(num, row) {
+    for(let i = 0; i < GRID_SIZE; i++) {
+        if(board[row][i] == num) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function isNumInColumn(num, column) {
+    for(let i = 0; i < GRID_SIZE; i++) {
+        if(board[i][column] == num) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function isNumInSquare(num, row, column) {
+    row = Math.floor(row / 3) * 3;
+    column = Math.floor(column / 3) * 3;
+
+    for(let i = row; i < row + 3; i++) {
+        for(let j = column; j < column + 3; j++) {
+            if(board[i][j] == num) {
+                return true; 
+            }
+        }
+    }
+    return false;
+}
+
+function isNumValid(num, row, column) {
+    if(isNumInColumn(num, column) || isNumInRow(num, row) || isNumInSquare(num, row, column)) {
+        return false;
+    }
+    return true;
+}
