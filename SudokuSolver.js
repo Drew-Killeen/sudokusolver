@@ -23,9 +23,9 @@ printBoard();
 function printBoard() {
   for (let row = 0; row < GRID_SIZE; row++) {
     for (let column = 0; column < GRID_SIZE; column++) {
-      console.log(board[row][column]);
+      process.stdout.write(board[row][column].toString() + " ");
     }
-    console.log("\n");
+    process.stdout.write("\n");
   }
 }
 
