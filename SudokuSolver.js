@@ -12,6 +12,23 @@ var board = [
 
 const GRID_SIZE = 9;
 
+if (solveBoard()) {
+  console.log("Board solved");
+} else {
+  console.log("Board unsolvable");
+}
+
+printBoard();
+
+function printBoard() {
+  for (let row = 0; row < GRID_SIZE; row++) {
+    for (let column = 0; column < GRID_SIZE; column++) {
+      console.log(board[row][column]);
+    }
+    console.log("\n");
+  }
+}
+
 function isNumInRow(num, row) {
   for (let i = 0; i < GRID_SIZE; i++) {
     if (board[row][i] == num) {
