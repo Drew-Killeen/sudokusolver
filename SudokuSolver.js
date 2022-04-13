@@ -12,6 +12,7 @@ var board = [
 
 const GRID_SIZE = 9;
 
+// run main function
 if (solveBoard()) {
   console.log("Board solved");
 } else {
@@ -72,6 +73,7 @@ function isNumValid(num, row, column) {
   return true;
 }
 
+// Solve board using backtracking algorithm
 function solveBoard() {
   for (let row = 0; row < GRID_SIZE; row++) {
     for (let column = 0; column < GRID_SIZE; column++) {
